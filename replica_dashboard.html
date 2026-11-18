@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GTM Dashboard — replica</title><style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#14181f;--mut:#6b7280;--line:#e5e7eb;--new:#1f4e9c;--up:#2e9c86;--ren:#8c6bd1;--warn:#b42318;--ok:#067647}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f1319;--card:#171c25;--ink:#e8ebf1;--mut:#9aa3b2;--line:#262d39;--new:#7aa7ff;--up:#4fd1b5;--ren:#b9a2f0;--warn:#ff8a80;--ok:#6ee7a8}}
+:root[data-theme="dark"]{--bg:#0f1319;--card:#171c25;--ink:#e8ebf1;--mut:#9aa3b2;--line:#262d39;--new:#7aa7ff;--up:#4fd1b5;--ren:#b9a2f0;--warn:#ff8a80;--ok:#6ee7a8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 60px}
+h1{font-size:22px;margin:0 0 4px}h2{font-size:16px;margin:32px 0 10px}.sub{color:var(--mut);margin:0 0 18px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.kpi,.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kpi b{display:block;font-size:22px;margin-top:4px}.kpi span{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.kpi small{color:var(--mut)}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}th,td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:right}
+th:first-child,td:first-child{text-align:left}th{color:var(--mut);font-weight:600;font-size:12px}
+.bar{height:10px;border-radius:5px;background:var(--line);overflow:hidden;min-width:120px}.bar i{display:block;height:100%}
+.legend{color:var(--mut);font-size:12px;margin:6px 0 0}.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin:0 4px 0 12px;vertical-align:-1px}
+.note{color:var(--mut);font-size:12px;margin-top:8px}.neg{color:var(--warn)}.pos{color:var(--ok)}
+.q{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media (max-width:640px){.q{grid-template-columns:1fr 1fr}}
+</style></head>
+<body>
+<main>
+<h1>GTM Executive Dashboard — replica</h1>
+<p class="sub">Built from live Salesforce data (as of 2026-11-18) and plan targets from the Reporting Data Warehouse sheet.
+Closed-quarter figures use Q1–Q3; Q4 is in progress.</p>
+
+<div class="kpis">
+  <div class="kpi"><span>YTD bookings (new + upsell)</span><b>$8.70M</b><small>53% of $16.5M FY plan</small></div>
+  <div class="kpi"><span>YTD new business</span><b>$4.47M</b><small>plan $8.5M FY</small></div>
+  <div class="kpi"><span>YTD upsell</span><b>$4.23M</b><small>plan $8.0M FY</small></div>
+  <div class="kpi"><span>YTD churn</span><b class="neg">$4.99M</b><small>allowance $3.3M</small></div>
+  <div class="kpi"><span>Open pipeline, 2026 close</span><b>$18.09M</b><small>Commit $7.98M</small></div>
+  <div class="kpi"><span>Simple ARR roll-forward</span><b>$45.05M</b><small>Jan-26 opening $41.3M</small></div>
+</div>
+
+<h2>Bookings by quarter vs plan</h2>
+<div class="q"><div class="card"><div style="color:var(--mut);font-size:12px">Q1 2026 · closed</div>
+<b style="font-size:20px">$4.19M</b> <span style="color:var(--mut)">of $4.4M plan</span>
+<div style="margin:8px 0"><div class="bar" style="display:flex"><i style="width:74.2%;background:var(--new);display:inline-block;height:100%"></i><i style="width:21.0%;background:var(--up);display:inline-block;height:100%"></i></div></div>
+<div style="color:var(--mut);font-size:12px">95% attained · new $3.26M · upsell $0.92M</div></div><div class="card"><div style="color:var(--mut);font-size:12px">Q2 2026 · closed</div>
+<b style="font-size:20px">$2.22M</b> <span style="color:var(--mut)">of $3.3M plan</span>
+<div style="margin:8px 0"><div class="bar" style="display:flex"><i style="width:22.0%;background:var(--new);display:inline-block;height:100%"></i><i style="width:45.2%;background:var(--up);display:inline-block;height:100%"></i></div></div>
+<div style="color:var(--mut);font-size:12px">67% attained · new $0.73M · upsell $1.49M</div></div><div class="card"><div style="color:var(--mut);font-size:12px">Q3 2026 · closed</div>
+<b style="font-size:20px">$2.22M</b> <span style="color:var(--mut)">of $4.0M plan</span>
+<div style="margin:8px 0"><div class="bar" style="display:flex"><i style="width:12.0%;background:var(--new);display:inline-block;height:100%"></i><i style="width:43.4%;background:var(--up);display:inline-block;height:100%"></i></div></div>
+<div style="color:var(--mut);font-size:12px">55% attained · new $0.48M · upsell $1.74M</div></div><div class="card"><div style="color:var(--mut);font-size:12px">Q4 2026 · in progress</div>
+<b style="font-size:20px">$0.08M</b> <span style="color:var(--mut)">of $4.8M plan</span>
+<div style="margin:8px 0"><div class="bar" style="display:flex"><i style="width:0.0%;background:var(--new);display:inline-block;height:100%"></i><i style="width:1.6%;background:var(--up);display:inline-block;height:100%"></i></div></div>
+<div style="color:var(--mut);font-size:12px">2% attained · new $0.00M · upsell $0.08M</div></div></div>
+<div class="legend"><i style="background:var(--new)"></i>New business<i style="background:var(--up)"></i>Upsell</div>
+<div class="card" style="margin-top:12px"><table><thead><tr><th>Quarter</th><th>New plan</th><th>New won</th><th>Upsell plan</th><th>Upsell won</th><th>Total plan</th><th>Total won</th><th>Attained</th></tr></thead><tbody><tr><td>Q1</td><td>$3,000K</td><td>$3,265K</td><td>$1,400K</td><td>$924K</td><td>$4,400K</td><td>$4,189K</td><td>95%</td></tr><tr><td>Q2</td><td>$1,600K</td><td>$727K</td><td>$1,700K</td><td>$1,491K</td><td>$3,300K</td><td>$2,218K</td><td>67%</td></tr><tr><td>Q3</td><td>$1,700K</td><td>$479K</td><td>$2,300K</td><td>$1,738K</td><td>$4,000K</td><td>$2,217K</td><td>55%</td></tr><tr><td>Q4</td><td>$2,200K</td><td>$0K</td><td>$2,600K</td><td>$78K</td><td>$4,800K</td><td>$78K</td><td>2%</td></tr><tr><td><b>FY</b></td><td>$8,500K</td><td>$4,471K</td><td>$8,000K</td><td>$4,230K</td><td>$16,500K</td><td>$8,701K</td><td>53%</td></tr></tbody></table></div>
+
+<h2>Churn and renewals</h2>
+<div class="card"><table><thead><tr><th>Quarter</th><th>Lost renewals</th><th>Churn on won renewals</th><th>Total churn</th><th>Planned allowance</th><th>vs allowance</th><th>Renewals won (ARR)</th></tr></thead><tbody><tr><td>Q1</td><td>$842K</td><td>$0K</td><td>$842K</td><td>$700K</td><td class="neg">over</td><td>$3,489K</td></tr><tr><td>Q2</td><td>$1,777K</td><td>$459K</td><td>$2,236K</td><td>$1,001K</td><td class="neg">over</td><td>$6,659K</td></tr><tr><td>Q3</td><td>$1,759K</td><td>$0K</td><td>$1,759K</td><td>$395K</td><td class="neg">over</td><td>$4,004K</td></tr><tr><td>Q4</td><td>$154K</td><td>$0K</td><td>$154K</td><td>$1,244K</td><td class="pos">within</td><td>$1,360K</td></tr><tr><td><b>YTD</b></td><td></td><td></td><td>$4,991K</td><td>$3,340K</td><td></td><td>$15,512K</td></tr></tbody></table>
+<div class="note">Total churn = Churn_Amount__c on lost renewals plus on won renewals (won renewals carry churn only in Q2). Allowance is the churn tolerance in the plan sheet, shown as a positive amount.</div></div>
+
+<h2>Open pipeline by forecast category</h2>
+<div class="card"><table><thead><tr><th>Forecast category</th><th>Open ARR (2026 close)</th><th></th></tr></thead><tbody><tr><td>Commit</td><td>$7.98M</td><td style="width:45%"><div class="bar" style="display:flex"><i style="width:100.0%;background:var(--new);display:inline-block;height:100%"></i></div></td></tr><tr><td>Best Case</td><td>$4.09M</td><td style="width:45%"><div class="bar" style="display:flex"><i style="width:51.3%;background:var(--new);display:inline-block;height:100%"></i></div></td></tr><tr><td>Stretch</td><td>$3.32M</td><td style="width:45%"><div class="bar" style="display:flex"><i style="width:41.6%;background:var(--new);display:inline-block;height:100%"></i></div></td></tr><tr><td>Omitted</td><td>$2.70M</td><td style="width:45%"><div class="bar" style="display:flex"><i style="width:33.8%;background:var(--new);display:inline-block;height:100%"></i></div></td></tr><tr><td><b>Total open</b></td><td><b>$18.09M</b></td><td></td></tr></tbody></table>
+<div class="note">Open opportunities with a 2026 close date, Migration excluded, Deal ARR &gt; 0. The published dashboard’s $16.3M open pipeline uses a different scope (it excludes Stage 0 and renewals, and includes 2027 close dates), so the two are not comparable yet.</div></div>
+
+<h2>Rep attainment (new + upsell won, 2026)</h2>
+<div class="card"><table><thead><tr><th>Rep</th><th>New + upsell won, 2026</th><th>Annual quota</th><th>Attained</th></tr></thead><tbody><tr><td>Mark Sowa</td><td>$3.20M</td><td>$1.50M</td><td>214%</td></tr><tr><td>Dave Swarr</td><td>$1.37M</td><td>$1.70M</td><td>81%</td></tr><tr><td>Avinash Kumar</td><td>$1.36M</td><td>$1.08M</td><td>125%</td></tr><tr><td>Jay Samonsky</td><td>$1.27M</td><td>$1.75M</td><td>72%</td></tr><tr><td>Chuck Crawley</td><td>$0.61M</td><td>$1.80M</td><td>34%</td></tr><tr><td>Leah Shisha</td><td>$0.50M</td><td>$1.75M</td><td>29%</td></tr><tr><td>Gustav Thunborg</td><td>$0.15M</td><td>$1.27M</td><td>12%</td></tr><tr><td>Marc Rankin</td><td>$0.12M</td><td>$2.00M</td><td>6%</td></tr><tr><td>Shaun Taylor</td><td>$0.08M</td><td>$1.71M</td><td>4%</td></tr><tr><td>Adam Fox</td><td>$0.05M</td><td>no quota on file</td><td>—</td></tr></tbody></table>
+<div class="note">Attained = 2026 won ARR ÷ annual quota. Quotas are from the rep quota sheet, already in whole dollars. Adam Fox has no quota on file.</div></div>
+
+<h2>Method and sources</h2>
+<div class="card" style="font-size:13px">
+<ul style="margin:0;padding-left:18px">
+<li><b>Bookings and churn</b>: Salesforce Opportunity, CloseDate in 2026, Type ≠ Migration, Deal_ARR__c &gt; 0. Wins use IsWon. Renewal churn is Churn_Amount__c.</li>
+<li><b>Plan</b>: quarterly and annual targets parsed from the Reporting Data Warehouse workbook (data/slow/sheet_targets.json, as of 2026-10-27 per data/slow/MANIFEST.json).</li>
+<li><b>Beginning ARR</b>: Jan-26 opening ARR of $41.3M from the workbook’s ARR-by-month block.</li>
+<li><b>Simple roll-forward</b> = opening ARR + YTD new + YTD upsell − YTD churn. It leaves out renewal uplift, so it does not match the published figure.</li>
+</ul>
+<p class="note" style="margin-top:10px">Not reproduced yet: NRR and GRR, the Summary verdict, partner channel, Demand Gen and landing pages, Sales Productivity, Pipeline Productivity, Customer Health, Top Accounts and the stage-conversion ladders. Each needs an extra query or a sheet tab that has not been pulled.</p>
+</div>
+</main>
+</body></html>
