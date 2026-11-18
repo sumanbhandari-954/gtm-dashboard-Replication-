@@ -6,6 +6,6 @@ A partial replica of the GTM Executive Dashboard, built from data that can be re
 - `build_replica.py` — computes bookings vs plan, churn vs allowance, open pipeline by forecast category and rep attainment, then writes `replica_dashboard.html`.
 - `replica_dashboard.html` — the built page (self-contained, no external requests).
 
-The plan targets are read from `data/slow/` in the source project (parsed from the Reporting Data Warehouse workbook). This repo ships a copy of the Salesforce aggregates and the built page; `build_replica.py` expects the plan-target JSON files alongside it in the same layout, as in `striimvirani/gtm-dashboard`.
+The plan targets come from `data/slow/` in `striimvirani/gtm-dashboard` (parsed from the Reporting Data Warehouse workbook). `build_replica.py` reads `../data/slow/sheet_targets.json` and `../data/slow/sheet_arr_rollforward.json`, so this repo's files need that folder layout to rebuild. The built page is included, so it can be viewed without rebuilding.
 
 Not yet covered: NRR/GRR, partner channel, Demand Gen, sales productivity, pipeline productivity, customer health, top accounts, stage-conversion ladders.
